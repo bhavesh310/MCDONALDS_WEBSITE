@@ -1,0 +1,99 @@
+.navbar {
+  height: 90px;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+  color: white; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  backdrop-filter: blur(4px); /* Subtle glassmorphism effect at top edge */
+}
+
+.logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 55px;
+  height: auto;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.nav-links {
+  display: flex;
+  gap: 4rem;
+  list-style: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.nav-item {
+  position: relative;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.nav-item:hover {
+  color: #FFBC0D; /* Iconic golden arches yellow */
+}
+
+/* Slick expanding underline indicator */
+.nav-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #FFBC0D;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-item:hover .nav-underline {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.signin-btn {
+  background-color: #DA291C; /* Premium McRed */
+  color: white;
+  padding: 0.75rem 1.75rem;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.signin-btn:hover {
+  background-color: transparent;
+  border-color: #FFBC0D;
+  color: #FFBC0D;
+}
+
+/* Responsiveness fallback so things don't compress weirdly */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 2rem;
+  }
+  .nav-links {
+    gap: 2rem;
+    font-size: 0.9rem;
+  }
+}
